@@ -18,7 +18,7 @@ Prerequisites:
 
 1. Clone the repository and `cd` into it
 ```bash
-git clone https://github.com/boschresearch/ube-mbrl.git && cd ube-mbrl
+git clone https://github.com/camonten/DataDriven_Lyap_CE.git && cd DataDriven_Lyap_CE
 ```
 
 2. Create a conda environment
@@ -26,7 +26,12 @@ git clone https://github.com/boschresearch/ube-mbrl.git && cd ube-mbrl
 conda env create --file=environment.yml
 ```
 
-3. Install `JAX` as described [here](https://jax.readthedocs.io/en/latest/installation.html)
+3. Activate the conda environment
+```bash
+conda activate hy_lyap_ce
+```
+
+4. Install `JAX` as described [here](https://jax.readthedocs.io/en/latest/installation.html)
 
 
 ----------------------------------------------------------------------------
