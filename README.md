@@ -11,7 +11,7 @@ https://github.com/camonten/DataDriven_Lyap_CE
 # `Installation`
 
 Prerequisites:
-- `conda`
+- `conda` (install as described [here](https://conda.io/projects/conda/en/latest/user-guide/install/index.html))
 - `JAX`
 
 ### Setting up the `conda` environment.
