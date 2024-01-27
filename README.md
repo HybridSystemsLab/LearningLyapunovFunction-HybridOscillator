@@ -13,6 +13,7 @@ https://github.com/camonten/DataDriven_Lyap_CE
 Prerequisites:
 - `conda` (download `Anaconda Distribution` [here](https://www.anaconda.com/download))
 - `git` (install as described [here](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git))
+- `Matlab` (Developed in R2022b). Install HyEQ Toolbox 3.0.0.76, available [at this link](https://www.mathworks.com/matlabcentral/fileexchange/41372-hybrid-equations-toolbox). 
 - For Windows users:
   - `WSL` (install as described [here](https://learn.microsoft.com/en-us/windows/wsl/install))
   
