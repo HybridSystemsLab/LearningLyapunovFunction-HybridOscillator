@@ -15,6 +15,17 @@ Prerequisites:
 - `JAX` (install as described [here](https://jax.readthedocs.io/en/latest/installation.html))
 - `git` (install as described [here](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git))
 
+For Windows users:
+- `WSL` (install as described [here](https://learn.microsoft.com/en-us/windows/wsl/install))
+
+For Mac users with the M1 chip (or newer):
+- Sometimes installing JAX as noted above may lead to errors when importing. If this is the case, you can try installing it with conda using
+```bash
+pip uninstall jax jaxlib
+conda install -c conda-forge jaxlib
+conda install -c conda-forge jax
+```
+
 ### Setting up the `conda` environment.
 
 1. Open `Anaconda Prompt`
@@ -48,25 +59,25 @@ By setting the boolean variable `training_lyapunov = True`, the setting of \*Sec
 
 The following actions are executed upon the corresponding option.
 
-    - `training_lyapunov = True`:
-        1. it will instantiate the hybrid dynamical system with its data,
-        2. it will create the coverings for the flow and jump sets used for training (with $\varepsilon = 0.01$ and $\mu = 1.1\varepsilon$),
-        3. it will create and train a neural network that approximates a Lyapunov function with the following hyperparameters
-            - net_dims = (2, 16, 32)
-            - n_epochs = 230
-            - $\tau_C = 0.037$ and $\tau_D = 0.049$
-        4. it will generate figures 2 and 3, and thanks to Theorem 3.11 we certify the set $\mathcal{A} = \{ 0\}$ practically
-            pre-asymptotically stable.
+ - `training_lyapunov = True`:
+     1. it will instantiate the hybrid dynamical system with its data,
+     2. it will create the coverings for the flow and jump sets used for training (with $\varepsilon = 0.01$ and $\mu = 1.1\varepsilon$),
+     3. it will create and train a neural network that approximates a Lyapunov function with the following hyperparameters
+         - net_dims = (2, 16, 32)
+         - n_epochs = 230
+         - $\tau_C = 0.037$ and $\tau_D = 0.049$
+     4. it will generate figures 2 and 3, and thanks to Theorem 3.11 we certify the set $\mathcal{A} = \{ 0\}$ practically
+         pre-asymptotically stable.
 
-    - `training_lyapunov = False`:
-        1. it will instantiate the hybrid dynamical system with its data,
-        2. it will create the coverings for the flow and jump sets used for training (with $\varepsilon = 0.01$),
-        3. it will instantiate the stage cost for flows as $L_C(x) = 0.5|x|^2$ and the stage cost for jumps as $L_D(x) = 0.15|x|^2$
-        4. it will create and train a neural network that approximates a Lyapunov function with the following hyperparameters
-            - net_dims = (2, 16, 32)
-            - n_epochs = 500
-            - $\eta_C = 0.058$ and $\eta_D = 0.044$
-        5. it will generate figures 4 and 5, and thanks to Theorem 4.4 we certify that the trained neural net defines
-            an upper bound on the cost of solutions to the hybrid oscillator.
+ - `training_lyapunov = False`:
+     1. it will instantiate the hybrid dynamical system with its data,
+     2. it will create the coverings for the flow and jump sets used for training (with $\varepsilon = 0.01$),
+     3. it will instantiate the stage cost for flows as $L_C(x) = 0.5|x|^2$ and the stage cost for jumps as $L_D(x) = 0.15|x|^2$
+     4. it will create and train a neural network that approximates a Lyapunov function with the following hyperparameters
+         - net_dims = (2, 16, 32)
+         - n_epochs = 500
+         - $\eta_C = 0.058$ and $\eta_D = 0.044$
+     5. it will generate figures 4 and 5, and thanks to Theorem 4.4 we certify that the trained neural net defines
+         an upper bound on the cost of solutions to the hybrid oscillator.
 
 Given the stochastic nature of training neural networks, the weights of the network may be updated every time the training process is run. Thus, the output figures might be slightly different upon each execution of the code. A workspace with selected trained weights will be provided to replicate the plots included in the final version of the paper.
