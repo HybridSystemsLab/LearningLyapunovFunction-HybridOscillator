@@ -10,21 +10,13 @@ https://github.com/camonten/DataDriven_Lyap_CE
 ----------------------------------------------------------------------------
 # `Installation`
 
-Prerequisites:
-- `conda` (download `Anaconda Distribution` [here](https://www.anaconda.com/download))
-- `JAX` (install as described [here](https://jax.readthedocs.io/en/latest/installation.html))
-- `git` (install as described [here](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git))
-
 For Windows users:
 - `WSL` (install as described [here](https://learn.microsoft.com/en-us/windows/wsl/install))
 
-For Mac users with the M1 chip (or newer):
-- Sometimes installing JAX as noted above may lead to errors when importing. If this is the case, you can try installing it with conda using
-```bash
-pip uninstall jax jaxlib
-conda install -c conda-forge jaxlib
-conda install -c conda-forge jax
-```
+Prerequisites:
+- `conda` (download `Anaconda Distribution` [here](https://www.anaconda.com/download))
+- `git` (install as described [here](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git))
+  
 
 ### Setting up the `conda` environment.
 
@@ -47,12 +39,18 @@ conda env create --file=environment.yml
 conda activate hy_lyap_ce
 ```
 
-4. For Mac and Linux users, open using
+4. Install `JAX` using
+```bash
+conda install -c conda-forge jaxlib
+conda install -c conda-forge jax
+```
+
+5. For Mac and Linux users, open using
 ```bash
 jupyter notebook
 ```
 
- For Windows users on WSL run
+For Windows users on WSL run
  ```bash
 jupyter notebook --no-browser
 ```
