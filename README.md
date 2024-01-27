@@ -28,9 +28,7 @@ conda install -c conda-forge jax
 
 ### Setting up the `conda` environment.
 
-1. Open `Anaconda Prompt`
-
-2. Clone the repository and `cd` into it
+1. Clone the repository and `cd` into it
 ```bash
 git clone https://github.com/camonten/DataDriven_Lyap_CE.git
 ```
@@ -39,16 +37,27 @@ git clone https://github.com/camonten/DataDriven_Lyap_CE.git
 cd DataDriven_Lyap_CE
 ```
 
-3. Create a conda environment
+2. Create a conda environment
 ```bash
 conda env create --file=environment.yml
 ```
 
-4. Activate the conda environment
+3. Activate the conda environment
 ```bash
 conda activate hy_lyap_ce
 ```
 
+4. For Mac and Linux users, open using
+```bash
+jupyter notebook
+```
+
+ For Windows users on WSL run
+ ```bash
+jupyter notebook --no-browser
+```
+
+and follow the instructions below.
 
 ----------------------------------------------------------------------------
 ## 5. Case of Study: Lyapunov Function and Cost Upper Bound for Oscillator with Impacts
