@@ -58,7 +58,7 @@ jupyter notebook --no-browser
 and follow the instructions below.
 
 ----------------------------------------------------------------------------
-## 5. Case of Study: Lyapunov Function and Cost Upper Bound for Oscillator with Impacts
+## Section 5. Case of Study: Lyapunov Function and Cost Upper Bound for Oscillator with Impacts
 
 The notebook `HyOscillator_Train.ipynb` contains the code to obtain the figures in Section 5 of the paper. You can open the Jupyter notebook `HyOscillator_Train.ipynb` either by VS Code or Anaconda Navigator, but please make sure the kernel in use corresponds to that of the conda environment you created before.  
 
