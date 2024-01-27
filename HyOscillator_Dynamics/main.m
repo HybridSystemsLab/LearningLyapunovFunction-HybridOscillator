@@ -28,4 +28,4 @@ ts = sol.t;
 jts = sol.jump_times;
 
 % Export workspace
-save('../data')
+save('../HyArc')

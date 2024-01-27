@@ -11,66 +11,62 @@ https://github.com/camonten/DataDriven_Lyap_CE
 # `Installation`
 
 Prerequisites:
-- `conda` (install as described [here](https://conda.io/projects/conda/en/latest/user-guide/install/index.html))
-- `JAX`
+- `conda` (download `Anaconda Distribution` [here](https://www.anaconda.com/download))
+- `JAX` (install as described [here](https://jax.readthedocs.io/en/latest/installation.html))
+- `git` (install as described [here](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git))
 
 ### Setting up the `conda` environment.
 
-1. Clone the repository and `cd` into it
+1. Open `Anaconda Prompt`
+
+2. Clone the repository and `cd` into it
 ```bash
-git clone https://github.com/camonten/DataDriven_Lyap_CE.git && cd DataDriven_Lyap_CE
+git clone https://github.com/camonten/DataDriven_Lyap_CE.git
 ```
 
-2. Create a conda environment
+```bash
+cd DataDriven_Lyap_CE
+```
+
+3. Create a conda environment
 ```bash
 conda env create --file=environment.yml
 ```
 
-3. Activate the conda environment
+4. Activate the conda environment
 ```bash
 conda activate hy_lyap_ce
 ```
 
-4. Install `JAX` as described [here](https://jax.readthedocs.io/en/latest/installation.html)
-
 
 ----------------------------------------------------------------------------
-## Case of Study: Lyapunov Function and Cost Upper Bound for Oscillator with Impacts
+## 5. Case of Study: Lyapunov Function and Cost Upper Bound for Oscillator with Impacts
 
-1. If you want to train from scratch the models and generate new plots, run [HyOscillator_Train.ipynb](HyOscillator_Train.ipynb) and follow the instructions therein.
-   
-    As a result,
+The notebook `HyOscillator_Train.ipynb` contains the code to obtain the figures in Section 5 of the paper. You can open the Jupyter notebook `HyOscillator_Train.ipynb` either by VS Code or Anaconda Navigator, but please make sure the kernel in use corresponds to that of the conda environment you created before.  
 
-     - `For practical pre-asymptotic stability`:
-         1. it will instantiate the hybrid dynamical system with its data,
-         2. it will create the coverings for the flow and jump sets used for training (with $\varepsilon = 0.01$ and $\mu = 1.1\varepsilon$),
-         3. it will create and train a neural network that approximates a Lyapunov function with the following hyperparameters
-              - net_dims = (2, 16, 32)
-              - n_epochs = 500
-              - $\tau_C = 0.053$ and $\tau_D = 0.049$
-          4. it will generate figures 2 and 3, and thanks to Theorem 3.11 we certify the set $\mathcal{A} = \{ 0\}$ practically
-             pre-asymptotically stable.
+By setting the boolean variable `training_lyapunov = True`, the setting of \*Section 5.1. Data-Driven Lyapunov Function\* is run and the figures therein are plotted. By setting the boolean variable `training_lyapunov = False`, the setting of \*Section 5.2. Data-Driven Cost Upper Bound\* is run, and the figures therein are plotted. See details below.
 
-     - `For data-driven cost upper bound`:
-         1. it will instantiate the hybrid dynamical system with its data,
-         2. it will create the coverings for the flow and jump sets used for training (with $\varepsilon = 0.01$),
-         3. it will instantiate the stage cost for flows as $L_C(x) = 0.5|x|^2$ and the stage cost for jumps as $L_D(x) = 0.15|x|^2$
-         4. it will create and train a neural network that approximates a Lyapunov function with the following hyperparameters
-              - net_dims = (2, 16, 32)
-              - n_epochs = 500
-              - $\eta_C = 0.058$ and $\eta_D = 0.044$
-          5. it will generate figures 4 and 5, and thanks to Theorem 4.4 we certify that the trained neural net defines
-             an upper bound on the cost of solutions to the hybrid oscillator.
+The following actions are executed upon the corresponding option.
 
-2. If you want to just recreate the figures without training, run [HyOscillator_Figs.ipynb](HyOscillator_Figs.ipynb) and
-   follow the instructions therein.
-   
-   As a result, it will load the weights of the last training and reproduce figures 2 and 3 (for practical pre-asymptotic stability) and figures 4 and 5 (for data-driven cost upper bound).
+    - `training_lyapunov = True`:
+        1. it will instantiate the hybrid dynamical system with its data,
+        2. it will create the coverings for the flow and jump sets used for training (with $\varepsilon = 0.01$ and $\mu = 1.1\varepsilon$),
+        3. it will create and train a neural network that approximates a Lyapunov function with the following hyperparameters
+            - net_dims = (2, 16, 32)
+            - n_epochs = 500
+            - $\tau_C = 0.053$ and $\tau_D = 0.049$
+        4. it will generate figures 2 and 3, and thanks to Theorem 3.11 we certify the set $\mathcal{A} = \{ 0\}$ practically
+            pre-asymptotically stable.
 
+    - `training_lyapunov = False`:
+        1. it will instantiate the hybrid dynamical system with its data,
+        2. it will create the coverings for the flow and jump sets used for training (with $\varepsilon = 0.01$),
+        3. it will instantiate the stage cost for flows as $L_C(x) = 0.5|x|^2$ and the stage cost for jumps as $L_D(x) = 0.15|x|^2$
+        4. it will create and train a neural network that approximates a Lyapunov function with the following hyperparameters
+            - net_dims = (2, 16, 32)
+            - n_epochs = 500
+            - $\eta_C = 0.058$ and $\eta_D = 0.044$
+        5. it will generate figures 4 and 5, and thanks to Theorem 4.4 we certify that the trained neural net defines
+            an upper bound on the cost of solutions to the hybrid oscillator.
 
-
-
-
-
-
-
+Given the stochastic nature of training neural networks, the weights of the network may be updated every time the training process is run. Thus, the output figures might be slightly different upon each execution of the code. A workspace with selected trained weights will be provided to replicate the plots included in the final version of the paper.
