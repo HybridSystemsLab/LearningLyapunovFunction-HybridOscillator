@@ -10,12 +10,11 @@ https://github.com/camonten/DataDriven_Lyap_CE
 ----------------------------------------------------------------------------
 # `Installation`
 
-For Windows users:
-- `WSL` (install as described [here](https://learn.microsoft.com/en-us/windows/wsl/install))
-
 Prerequisites:
 - `conda` (download `Anaconda Distribution` [here](https://www.anaconda.com/download))
 - `git` (install as described [here](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git))
+- For Windows users:
+  - `WSL` (install as described [here](https://learn.microsoft.com/en-us/windows/wsl/install))
   
 
 ### Setting up the `conda` environment.
@@ -45,7 +44,7 @@ conda install -c conda-forge jaxlib
 conda install -c conda-forge jax
 ```
 
-5. For Mac and Linux users, open using
+5. For Mac and Linux users, open Jupyter using
 ```bash
 jupyter notebook
 ```
