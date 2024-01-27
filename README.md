@@ -11,12 +11,20 @@ https://github.com/camonten/DataDriven_Lyap_CE
 # `Installation`
 
 Prerequisites:
-- `conda` (download `Anaconda Distribution` [here](https://www.anaconda.com/download))
+- `Anaconda` (download [here](https://www.anaconda.com/download))
 - `git` (install as described [here](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git))
 - `Matlab` (Developed in R2022b). Install HyEQ Toolbox 3.0.0.76, available [at this link](https://www.mathworks.com/matlabcentral/fileexchange/41372-hybrid-equations-toolbox). 
+- `LaTex` (install as described [here](https://www.latex-project.org/get/))
 - For Windows users:
   - `WSL` (install as described [here](https://learn.microsoft.com/en-us/windows/wsl/install))
-  
+    
+    Install in WSL: `Anaconda` ([here](https://gist.github.com/kauffmanes/5e74916617f9993bc3479f401dfec7da)), and `LaTex` as:
+
+    ```bash
+    sudo apt update
+    sudo apt install texlive
+    ```
+
 
 ### Setting up the `conda` environment.
 
@@ -62,9 +70,11 @@ and follow the instructions below.
 
 The notebook `HyOscillator_Train.ipynb` contains the code to obtain the figures in Section 5 of the paper, please make sure the kernel in use corresponds to that of the conda environment you created before.  
 
-By setting the boolean variable `training_lyapunov = True`, the setting of \*Section 5.1. Data-Driven Lyapunov Function\* is run and the figures therein are plotted. By setting the boolean variable `training_lyapunov = False`, the setting of \*Section 5.2. Data-Driven Cost Upper Bound\* is run, and the figures therein are plotted. See details below.
+A single code is used to obtain the simulation and figures of the Lyapunov function or the cost upper bound. Either can be selected by specifying the corresponding value of the input parameter  `training_lyapunov` as follows:
 
-The following actions are executed upon the corresponding option.
+By setting `training_lyapunov = True`, the scenario of \*Section 5.1. Data-Driven Lyapunov Function\* on the paper is run and the figures therein are plotted. By setting `training_lyapunov = False`, the scenario of \*Section 5.2. Data-Driven Cost Upper Bound\* on the paper is run, and the figures therein are plotted. See details below.
+
+The following actions are executed by running every cell in the Jupyter notebook under the corresponding option.
 
  - `training_lyapunov = True`:
      1. it will instantiate the hybrid dynamical system with its data,
@@ -84,7 +94,6 @@ The following actions are executed upon the corresponding option.
          - net_dims = (2, 16, 32)
          - n_epochs = 500
          - $\eta_C = 0.058$ and $\eta_D = 0.044$
-     5. it will generate figures 4 and 5, and thanks to Theorem 4.4 we certify that the trained neural net defines
-         an upper bound on the cost of solutions to the hybrid oscillator.
+     5. it will generate figures 4 and 5, and thanks to Theorem 4.4 we certify that the trained neural net defines an upper bound on the cost of solutions to the hybrid oscillator.
 
 Given the stochastic nature of training neural networks, the weights of the network may be updated every time the training process is run. Thus, the output figures might be slightly different upon each execution of the code. A workspace with selected trained weights will be provided to replicate the plots included in the final version of the paper.
