@@ -60,7 +60,7 @@ and follow the instructions below.
 ----------------------------------------------------------------------------
 ## Section 5. Case of Study: Lyapunov Function and Cost Upper Bound for Oscillator with Impacts
 
-The notebook `HyOscillator_Train.ipynb` contains the code to obtain the figures in Section 5 of the paper. You can open the Jupyter notebook `HyOscillator_Train.ipynb` either by VS Code or Anaconda Navigator, but please make sure the kernel in use corresponds to that of the conda environment you created before.  
+The notebook `HyOscillator_Train.ipynb` contains the code to obtain the figures in Section 5 of the paper, please make sure the kernel in use corresponds to that of the conda environment you created before.  
 
 By setting the boolean variable `training_lyapunov = True`, the setting of \*Section 5.1. Data-Driven Lyapunov Function\* is run and the figures therein are plotted. By setting the boolean variable `training_lyapunov = False`, the setting of \*Section 5.2. Data-Driven Cost Upper Bound\* is run, and the figures therein are plotted. See details below.
 
