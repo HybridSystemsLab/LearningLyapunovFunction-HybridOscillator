@@ -53,8 +53,8 @@ The following actions are executed upon the corresponding option.
         2. it will create the coverings for the flow and jump sets used for training (with $\varepsilon = 0.01$ and $\mu = 1.1\varepsilon$),
         3. it will create and train a neural network that approximates a Lyapunov function with the following hyperparameters
             - net_dims = (2, 16, 32)
-            - n_epochs = 500
-            - $\tau_C = 0.053$ and $\tau_D = 0.049$
+            - n_epochs = 230
+            - $\tau_C = 0.037$ and $\tau_D = 0.049$
         4. it will generate figures 2 and 3, and thanks to Theorem 3.11 we certify the set $\mathcal{A} = \{ 0\}$ practically
             pre-asymptotically stable.
 
