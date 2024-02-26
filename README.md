@@ -8,23 +8,6 @@ Revision: 0.0.0.2 Date: 01/26/2024
 https://github.com/camonten/DataDriven_Lyap_CE
 
 ----------------------------------------------------------------------------
-# `Installation`
-
-Prerequisites:
-- `Anaconda` (download [here](https://www.anaconda.com/download))
-- `git` (install as described [here](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git))
-- `Matlab` (Developed in R2022b). Install HyEQ Toolbox 3.0.0.76, available [at this link](https://www.mathworks.com/matlabcentral/fileexchange/41372-hybrid-equations-toolbox). 
-- `LaTex` (install as described [here](https://www.latex-project.org/get/))
-- For Windows users:
-  - `WSL` (install as described [here](https://learn.microsoft.com/en-us/windows/wsl/install))
-    
-    Install in WSL: `Anaconda` ([here](https://gist.github.com/kauffmanes/5e74916617f9993bc3479f401dfec7da)), and `LaTex` as:
-
-    ```bash
-    sudo apt update
-    sudo apt install texlive
-    ```
-
 # `Structure of the project`
 
 The project is structured as follows:
@@ -57,6 +40,23 @@ where each file:
     - `trained_lyap_final.npy`
 - `utils.py`: Utilities needed for the experiments and plotting, such as neural network-related functions, and formatting for results post-processing.
 
+
+# `Installation`
+
+Prerequisites:
+- `Anaconda` (download [here](https://www.anaconda.com/download))
+- `git` (install as described [here](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git))
+- `Matlab` (Developed in R2022b). Install HyEQ Toolbox 3.0.0.76, available [at this link](https://www.mathworks.com/matlabcentral/fileexchange/41372-hybrid-equations-toolbox). 
+- `LaTex` (install as described [here](https://www.latex-project.org/get/))
+- For Windows users:
+  - `WSL` (install as described [here](https://learn.microsoft.com/en-us/windows/wsl/install))
+    
+    Install in WSL: `Anaconda` ([here](https://gist.github.com/kauffmanes/5e74916617f9993bc3479f401dfec7da)), and `LaTex` as:
+
+    ```bash
+    sudo apt update
+    sudo apt install texlive
+    ```
 
 ### Setting up the `conda` environment.
 
