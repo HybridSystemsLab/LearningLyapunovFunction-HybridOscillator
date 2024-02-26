@@ -25,6 +25,38 @@ Prerequisites:
     sudo apt install texlive
     ```
 
+# `Structure of the project`
+
+The project is structured as follows:
+
+```
+.
+├── HyArc.mat
+├── HyOscillator_Dynamics
+│   ├── OscillatorImpacts.m
+│   └── main.m
+├── HyOscillator_Train.ipynb
+├── README.md
+├── environment.yml
+├── saved_models
+│   ├── trained_ce_final.npy
+│   └── trained_lyap_final.npy
+└── utils.py
+```
+
+where each file:
+
+- `HyArc.mat`: Matlab's workspace file containing the hybrid arc used to get the plot in Figure 2.
+- `HyOscillator_Dynamics`
+    - `OscillatorImpacts.m`: Oscillator with impacts modeled as a HybridSystem subclass
+    - `main.m`: Compute solutions to the oscillator with impacts
+- `HyOscillator_Train.ipynb`: Jupyter notebook to run the main code to get Figures 2, 3, 4, and 5.
+- `environment.yml`
+- `saved_models`: saved models trained with the hyperparameters reported in Section 5.
+    - `trained_ce_final.npy`
+    - `trained_lyap_final.npy`
+- `utils.py`: Utilities needed for the experiments and plotting, such as neural network-related functions, and formatting for results post-processing.
+
 
 ### Setting up the `conda` environment.
 
