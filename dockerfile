@@ -27,9 +27,9 @@ RUN conda install -c conda-forge jax=0.3.25
 RUN apt-get update && apt-get install -y \
     texlive \
     # texlive-full \
-    # texlive-latex-extra \
+    texlive-latex-extra \
     # texlive-fonts-recommended \
-    cm-super \
+    # cm-super \
     dvipng
 
 # Copy the rest of your application code into the container
