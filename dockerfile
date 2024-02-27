@@ -31,4 +31,4 @@ COPY . .
 
 # Set the command to run your application
 # CMD ["python", "your_script.py"]
-RUN jupyter notebook --ip 0.0.0.0 --no-browser --allow-root
+# RUN jupyter notebook --ip 0.0.0.0 --no-browser --allow-root
