@@ -73,10 +73,12 @@ def latexify(fig_width=None, fig_height=None, columns=1):
     # minipage. You need to use subplots.
     params = {
         # "backend": "ps",
-        "text.latex.preamble": [
-            r"\usepackage{gensymb}",
-            r"\usepackage{amsfonts}",
-        ],
+        "text.latex.preamble": "\n".join(
+            [
+                r"\usepackage{gensymb}",
+                r"\usepackage{amsfonts}",
+            ]
+        ),
         "axes.labelsize": 12,  # fontsize for x and y labels (was 12 and before 10)
         "axes.titlesize": 12,
         "font.size": 12,  # was 12 and before 10

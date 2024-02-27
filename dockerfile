@@ -19,8 +19,8 @@ RUN conda install -c conda-forge jupyter
 # RUN conda install -c conda-forge gcc=12.1.0
 
 # Install JAX
-RUN conda install -c conda-forge jaxlib
-RUN conda install -c conda-forge jax
+RUN conda install -c conda-forge jaxlib=0.3.25
+RUN conda install -c conda-forge jax=0.3.25
 
 # Install LaTex
 # RUN apt-get install texlive-latex-extra texlive-fonts-recommended dvipng cm-super
