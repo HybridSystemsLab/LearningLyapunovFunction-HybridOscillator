@@ -24,10 +24,11 @@ RUN conda install -c conda-forge jaxlib
 RUN conda install -c conda-forge jax
 
 # Install LaTex
-RUN apt-get install texlive-latex-extra texlive-fonts-recommended dvipng cm-super
+# RUN apt-get install texlive-latex-extra texlive-fonts-recommended dvipng cm-super
 
 # Copy the rest of your application code into the container
 COPY . .
 
 # Set the command to run your application
 # CMD ["python", "your_script.py"]
+RUN jupyter notebook --no-browser
