@@ -15,7 +15,7 @@ RUN echo "source activate $(head -1 environment.yml | cut -d' ' -f2)" > ~/.bashr
 ENV PATH /opt/conda/envs/$(head -1 environment.yml | cut -d' ' -f2)/bin:$PATH
 
 # Install additional packages
-RUN conda install -c conda-forge jupyter
+# RUN conda install -c conda-forge jupyter
 # RUN sudo apt-get install gcc python3-dev
 # RUN conda install -c conda-forge gcc=12.1.0
 
