@@ -44,11 +44,21 @@ where each file:
 # `Installation`
 
 Prerequisites:
+- `Anaconda` (download [here](https://www.anaconda.com/download))
 - `git` (install as described [here](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git))
 - `Matlab` (Developed in R2022b). Install HyEQ Toolbox 3.0.0.76, available [at this link](https://www.mathworks.com/matlabcentral/fileexchange/41372-hybrid-equations-toolbox). 
-- `Docker` (install as described [here](https://www.docker.com/products/docker-desktop/))
+- `LaTex` (install as described [here](https://www.latex-project.org/get/))
+- For Windows users:
+  - `WSL` (install as described [here](https://learn.microsoft.com/en-us/windows/wsl/install))
+    
+    Install in WSL: `Anaconda` ([here](https://gist.github.com/kauffmanes/5e74916617f9993bc3479f401dfec7da)), and `LaTex` as:
 
-### Setting up the docker image
+    ```bash
+    sudo apt update
+    sudo apt install texlive
+    ```
+
+### Setting up the `conda` environment.
 
 1. Clone the repository and `cd` into it
 ```bash
@@ -59,26 +69,30 @@ git clone https://github.com/camonten/DataDriven_Lyap_CE.git
 cd DataDriven_Lyap_CE
 ```
 
-2. Open `Docker Desktop` (or make sure `Docker` is running).
-
-3. Build the Docker image using the following command:
+2. Create a conda environment
 ```bash
-docker build -t dockerfile .
+conda env create --file=environment.yml
 ```
 
-4. Once the Docker image is built, run the Docker container based on this image:
+3. Activate the conda environment
 ```bash
-docker run -it -p 8888:8888 dockerfile
+conda activate hy_lyap_ce
 ```
 
-5. Inside the Container (i.e., in the same terminal you ran the Docker container in the previous step) run the following command:
+4. Install `JAX` using
 ```bash
-jupyter notebook --ip 0.0.0.0 --NotebookApp.token='' --NotebookApp.password='' --no-browser --allow-root
+conda install -c conda-forge jaxlib
+conda install -c conda-forge jax
 ```
 
-6. Access the following URL:
+5. For Mac and Linux users, open Jupyter using
+```bash
+jupyter notebook
+```
+
+For Windows users on WSL run
  ```bash
-localhost:8888
+jupyter notebook --no-browser
 ```
 
 and follow the instructions below.
