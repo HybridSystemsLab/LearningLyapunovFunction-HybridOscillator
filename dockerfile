@@ -24,8 +24,11 @@ RUN conda install -c conda-forge jax
 
 # Install LaTex
 # RUN apt-get install texlive-latex-extra texlive-fonts-recommended dvipng cm-super
-RUN apt-get update && apt-get install -y texlive texlive-latex-extra texlive-fonts-recommended
 RUN apt-get update && apt-get install -y \
+    texlive \
+    texlive-full \
+    texlive-latex-extra \
+    texlive-fonts-recommended \
     cm-super \
     dvipng
 
