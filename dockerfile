@@ -32,5 +32,11 @@ RUN apt-get update && apt-get install -y \
     cm-super \
     dvipng
 
+# Attempt to install texlive-latex-extra, but ignore errors if it fails
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    && apt-cache show texlive-latex-extra > /dev/null \
+    && apt-get install -y texlive-latex-extra \
+    || echo "Skipping texlive-latex-extra installation due to failure."
+
 # Copy the rest of your application code into the container
 COPY . .
