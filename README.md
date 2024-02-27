@@ -44,21 +44,11 @@ where each file:
 # `Installation`
 
 Prerequisites:
-- `Anaconda` (download [here](https://www.anaconda.com/download))
 - `git` (install as described [here](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git))
 - `Matlab` (Developed in R2022b). Install HyEQ Toolbox 3.0.0.76, available [at this link](https://www.mathworks.com/matlabcentral/fileexchange/41372-hybrid-equations-toolbox). 
-- `LaTex` (install as described [here](https://www.latex-project.org/get/))
-- For Windows users:
-  - `WSL` (install as described [here](https://learn.microsoft.com/en-us/windows/wsl/install))
-    
-    Install in WSL: `Anaconda` ([here](https://gist.github.com/kauffmanes/5e74916617f9993bc3479f401dfec7da)), and `LaTex` as:
+- `Docker` (install as described [here](https://www.docker.com/products/docker-desktop/))
 
-    ```bash
-    sudo apt update
-    sudo apt install texlive
-    ```
-
-### Setting up the `conda` environment.
+### Setting up the docker image
 
 1. Clone the repository and `cd` into it
 ```bash
@@ -69,30 +59,26 @@ git clone https://github.com/camonten/DataDriven_Lyap_CE.git
 cd DataDriven_Lyap_CE
 ```
 
-2. Create a conda environment
+2. Open `Docker Desktop` (or make sure `Docker` is running).
+
+3. Build the Docker image using the following command:
 ```bash
-conda env create --file=environment.yml
+docker build -t dockerfile .
 ```
 
-3. Activate the conda environment
+4. Once the Docker image is built, run the Docker container based on this image:
 ```bash
-conda activate hy_lyap_ce
+docker run -it -p 8888:8888 dockerfile
 ```
 
-4. Install `JAX` using
+5. Inside the Container (i.e., in the same terminal you ran the Docker container in the previous step) run the following command:
 ```bash
-conda install -c conda-forge jaxlib
-conda install -c conda-forge jax
+jupyter notebook --ip 0.0.0.0 --NotebookApp.token='' --NotebookApp.password='' --no-browser --allow-root
 ```
 
-5. For Mac and Linux users, open Jupyter using
-```bash
-jupyter notebook
-```
-
-For Windows users on WSL run
+6. Access the following URL:
  ```bash
-jupyter notebook --no-browser
+localhost:8888
 ```
 
 and follow the instructions below.
