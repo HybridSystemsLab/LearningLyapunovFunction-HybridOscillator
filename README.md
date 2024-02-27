@@ -4,7 +4,7 @@ Simulation for examples in HSCC'24 paper: A Data-Driven Approach for Certifying
 Asymptotic Stability and Cost Evaluation for Hybrid Systems
 
 Author: Carlos A. Montenegro G.
-Revision: 0.0.0.2 Date: 01/26/2024
+Revision: 0.0.0.3 Date: 02/26/2024
 https://github.com/camonten/DataDriven_Lyap_CE
 
 ----------------------------------------------------------------------------
@@ -27,7 +27,7 @@ The project is structured as follows:
 └── utils.py
 ```
 
-where each file:
+Files description:
 
 - `HyArc.mat`: Matlab's workspace file containing the hybrid arc used to get the plot in Figure 2.
 - `HyOscillator_Dynamics`
