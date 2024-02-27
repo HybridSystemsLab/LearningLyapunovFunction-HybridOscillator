@@ -28,7 +28,7 @@ RUN apt-get update && apt-get install -y \
     texlive \
     # texlive-full \
     texlive-latex-extra \
-    texlive-fonts-recommended \
+    # texlive-fonts-recommended \
     cm-super \
     dvipng
 
