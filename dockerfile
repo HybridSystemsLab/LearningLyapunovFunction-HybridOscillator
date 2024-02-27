@@ -29,7 +29,7 @@ RUN apt-get update && apt-get install -y \
     # texlive-full \
     texlive-latex-extra \
     # texlive-fonts-recommended \
-    # cm-super \
+    cm-super \
     dvipng
 
 # Copy the rest of your application code into the container
